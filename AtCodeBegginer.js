@@ -1,5 +1,3 @@
-// これ全部解けるようになったらBrown
-
 "use strict"
 /**
  * Shif Only
