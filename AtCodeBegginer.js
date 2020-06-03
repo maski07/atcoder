@@ -9,7 +9,7 @@ function Main(input){
   const numStds = input.split("\n")[1].split(' ');
  
   const divNum = numStds.map( number => {
-    let count = 0;
+    let count = 0
     let k = parseInt(number);
     
     // ここで割れるだけ割って
@@ -117,8 +117,48 @@ function Main10(input) {
 
   const pattern = /^(dream|dreamer|erase|eraser)+$/;
   const res = pattern.test(S);
-  
+  console.log(res);
   console.log(res ? 'YES' : 'NO');
 }
 Main10('dreamerasereraseerase');
+
+/**
+ * 3問目 Skill Up 答え
+ * https://atcoder.jp/contests/abc167/tasks/abc167_c
+ * ▪️ 学び
+ * ・分割代入をうまく利用している
+ * ・スプレッド演算子に代入の発想はなかった
+ * ・
+ */
+function Main(input){
+  const input = input.split('\n')
+  const [N, M, X] = input[0].split(' ').map(Number)
+  const books = []
+   
+  for (let i=1; i<=N; i++) {
+    const [price, ...skills] = input[i].split(' ').map(Number)
+    books.push({
+      price,
+      skills
+    })
+  }
+   
+  const solver = (n, skills) => {
+    const min = skills.reduce((a, c) => Math.min(a, c))
+    if (X <= min) {
+      return 0
+    }
+    if (n == N) {
+      return Infinity 
+    }
+   
+    const a = solver(n+1, skills.map((v, i) => v + books[n].skills[i])) + books[n].price
+    const b = solver(n+1, skills)
+   
+    return Math.min(a, b)
+  }
+   
+  const ans = solver(0, new Array(M).fill(0))
+  console.log(ans !== Infinity? ans : -1)
+}
 
