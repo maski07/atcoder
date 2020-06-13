@@ -1,12 +1,12 @@
 import java.util.*;
 public class Sample{
     public static void main(String[] args) {
-        String[] arr = args.split("\n")[1].split(" ");
-        int count = 1;
-        for(int i=0; i<arr.length; i++){
-            count *= arr[i];
-        }
-        System.out.println(count);
+        String[] arr = args.split("\n")[1].split("''");
+    int count = 1;
+    for(int i=0; i<arr.length; i++){
+        count *= arr[i];
+    }
+    System.out.println(count);
     }
 }
 
