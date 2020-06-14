@@ -78,7 +78,7 @@ const fib = new Fibonaccisequence();
 let i = 0;
 for(let n of fib){
     console.log(`${i+1}: ${n}`);
-    if(++i > 10) break;１１
+    if(++i > 10) break;
 }
 
 // ES6から日本語を関数に利用できるようになった
