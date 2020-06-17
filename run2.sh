@@ -1,13 +1,15 @@
 # ヒアドュメント形式
-filename=abcpra.py
+filename=200.py
 
 python3 $filename << EOS
-3 4 9 0
+X Y 
+Z A
 EOS
 echo ---
 
 python3 $filename << EOS
-3 4 10 40
+B C
+D E
 EOS
 echo ---
 
