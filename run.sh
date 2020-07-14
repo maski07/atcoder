@@ -1,5 +1,5 @@
 # ヒアドュメント形式
-filename=abc007.py
+filename=abc007_3.py
 
 python3 $filename << EOS
 7 8
