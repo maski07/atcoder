@@ -28,3 +28,37 @@ function Main2(input){
 // Main("1222")
 // Main("0290")
 // Main("3242")
+function ABC076_C(input){
+    const arr = input.trim().split('\n');
+    const S = arr[0]; // ?tc????
+    const T = arr[1]; // coder
+    const match = (k) =>{
+        for(let i=0; i<T; i++){
+            if(T[i] !== S[i+k] && s[i+k] !== '?'){
+                return false;
+            }
+        }
+        return true;
+    } 
+    const construct = (k) =>{
+        let ans = S;
+        for(let i=0; i<T; i++){
+            ans[k+i] = t[i];
+        }
+        for(let i=0; i<S; i++){
+            if(ans[i] == '?'){
+                ans[i] = 'a';
+            }
+        }
+        return ans;
+    }
+}
+// ABC076_C(require("fs").readFileSync("/dev/stdin", "utf8"));
+"use strict";
+function Main(input){
+    const a = input.trim();
+    console.log((a === 'a' ? -1 : 'a'));
+}
+Main('xyz')
+Main('c')
+Main('a')
