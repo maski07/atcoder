@@ -40,6 +40,8 @@ function ABC076_C(input){
         }
         return true;
     } 
+    for(let k=0; k<s-t+1; k++){
+    }
     const construct = (k) =>{
         let ans = S;
         for(let i=0; i<T; i++){
