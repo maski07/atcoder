@@ -16,7 +16,7 @@ function Main(input){
         // 753の数値を含んでいるかチェック
         const contains357 = array.map(val => num753.includes(val)).reduce((a, b) => a && b);
         // 桁数上限に達成
-        if(N.length == num753.length){
+        if(N.length === num753.length){
             if(contains357 && Number(num753) <= Number(N)) answer++;
             return; 
         }
