@@ -1,17 +1,18 @@
 # ヒアドュメント形式
-filename=abcpra.py
+filename=abc150_c.py
 
 python3 $filename << EOS
-?tc????
-coder
+3
+1 3 2
+3 1 2
 EOS
-
+# exit
 echo ---
 python3 $filename << EOS
-??p??d??
-abc
+8
+7 3 5 4 2 1 6 8
+3 8 2 5 4 6 7 1
 EOS
-
 
 
 # 補足 
