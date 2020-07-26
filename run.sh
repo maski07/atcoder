@@ -1,12 +1,14 @@
 # ヒアドュメント形式
-filename=abc150_c.py
+filename=abc122_c.py
 
 python3 $filename << EOS
-3
-1 3 2
-3 1 2
+8 3
+ACACTACG
+3 7
+2 3
+1 8
 EOS
-# exit
+exit
 echo ---
 python3 $filename << EOS
 8
@@ -21,6 +23,7 @@ EOS
 #     echo "file:". ${arg}
 #     python3 200.py < ${arg}
 # done
+
 
 # 再度ときたい問題
 # abc065_C問題 (全探索)
