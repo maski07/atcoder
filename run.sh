@@ -8,7 +8,7 @@ ACACTACG
 2 3
 1 8
 EOS
-exit
+# exit
 echo ---
 python3 $filename << EOS
 8
@@ -23,7 +23,6 @@ EOS
 #     echo "file:". ${arg}
 #     python3 200.py < ${arg}
 # done
-
 
 # 再度ときたい問題
 # abc065_C問題 (全探索)
