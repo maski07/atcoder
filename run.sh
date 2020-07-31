@@ -1,14 +1,9 @@
 # ヒアドュメント形式
-filename=abc122_c.py
+filename=sleep.py
 
 python3 $filename << EOS
-8 3
-ACACTACG
-3 7
-2 3
-1 8
 EOS
-# exit
+exit
 echo ---
 python3 $filename << EOS
 8
