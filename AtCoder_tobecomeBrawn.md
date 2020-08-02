@@ -1,6 +1,9 @@
 # AtCoder 茶色まで
+### mdファイルの見方(VSCODE)
+mac : cmd + shif + V  
+windows: ctrl + shift + V
 ## 製造メモ
-``` JavaScript:memo
+``` JavaScript : memo
 function Main(input){
 	
 }
