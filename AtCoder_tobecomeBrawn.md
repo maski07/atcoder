@@ -1,11 +1,11 @@
 # AtCoder 茶色まで
 ## 製造メモ
-``` JavaScript :memo
+``` JavaScript : memo
+const log = (...val) => console.log(...val);
 function Main(input){
 	
 }
-// Main(require("fs").readFileSync("/dev/stdin", "utf8"));
-const log = (...val) => console.log(...val);
+// Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 ```
 
 ## 目標
@@ -68,11 +68,14 @@ Cが解けたら、A, Bをとく
 	類似 : AntP85~を読んで理解すればOK  
 - [x] upper_boundを使った配列の二分探索  
 - [x] lower_boundを使った配列の二分探索  
+- [ ] 計算量を算出できるようになる  
 #### そのほか茶色問題で出てきたアルゴリズム  
 - [x] 工夫がいる問題  
 	類似：abc134_c(累積max(でも解ける))  
-- [ ] 配列でデータを保持し、計算量を定数にする技
-	類似：abc174_d
+- [ ] 配列でデータを保持し、計算量を定数にする
+	類似：abc174_d(※)
+- [ ] 素因数分解 ([試し割り法](https://ja.wikipedia.org/wiki/試し割り法))
+
 ---------- これで茶色達成‼︎ (8月中に全て習得する)  
 ### ここから緑色アルゴリズム (9月第1週までに全て習得する)  
 - [ ] 挑戦中！・幅優先探索  
@@ -105,6 +108,7 @@ https://atcoder.jp/contests/arc061/tasks/arc061_a
 #### 工夫がいる問題を解く時の考え方
 ・出力が何通りあるのかを考える  
 ・等式を作って、無駄を排除する  
+・最初にアルゴリズムを考える
 
 ## メモ： mdファイルの見方(VSCODE)
 mac : cmd + shif + V  
