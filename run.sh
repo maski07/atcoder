@@ -1,14 +1,15 @@
 # ヒアドュメント形式
-filename=sleep.py
+filename=abc173_c.py
 
 python3 $filename << EOS
+4
+2 2 1 3
 EOS
 exit
 echo ---
 python3 $filename << EOS
-8
-7 3 5 4 2 1 6 8
-3 8 2 5 4 6 7 1
+7
+1 1 1 1 1 1 1
 EOS
 
 
@@ -18,7 +19,4 @@ EOS
 #     echo "file:". ${arg}
 #     python3 200.py < ${arg}
 # done
-
-# 再度ときたい問題
-# abc065_C問題 (全探索)
 
