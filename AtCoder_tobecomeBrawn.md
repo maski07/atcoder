@@ -81,6 +81,10 @@ OKの定義は、C以上の問題を0から自分で解けたこと
 	問題：abc175_c(※)  
 - [ ] 数学問題
 	問題：abc177_c
+- [ ] 数学問題 (三角関数)
+	問題：
+- [ ] 貪欲法
+類似：abc173_d(※)
 ---------- これで茶色達成‼︎ (8月中に全て習得する)
 #### 茶色までの道のり 参考サイト
 [AtCoderProblems](https://kenkoooo.com/atcoder)
@@ -125,3 +129,8 @@ mac : cmd + shif + V
 windows: ctrl + shift + V
 #### mdファイルの記法
 https://qiita.com/oreo/items/82183bfbaac69971917f
+
+### Pythonの使い方集
+``` Python 
+for i,data enumerate(list) # 配列から、indexとdataを取得してfor文を回す
+```
