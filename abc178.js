@@ -37,6 +37,9 @@ function MainA(input){
 //     // 小さい数字のチェック
 //     console.log(answer)
 // }
+/**
+ * 線形で考えると、/ or \ しかないので、最大値だけ選べばOK
+ */
 function MainB(input){
     const [a,b,c,d] = input.split(' ').map(BigInt);
     const ac = a*c;

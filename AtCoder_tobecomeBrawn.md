@@ -9,7 +9,13 @@ function Main(input){
 // Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 ```
 ``` Python : memo
+""" スニペット """
+def get_int():
+	return int(input())
 
+def get_ints():
+	return list(map(int, input().split()))
+""" スニペット """
 ```
 
 ## 目標
@@ -78,9 +84,9 @@ OKの定義は、C以上の問題を0から自分で解けたこと
 	問題：abc174_d(※)
 - [ ] 素因数分解 ([試し割り法](https://ja.wikipedia.org/wiki/試し割り法))
 - [ ] 条件を考え最適化する問題
-	問題：abc175_c(※)  
+	問題：abc175_c(※)
 - [ ] 数学問題
-	問題：abc177_c
+	問題：abc177_c、abc178(包除原理)
 - [ ] 数学問題 (三角関数)
 	問題：
 - [ ] 貪欲法
