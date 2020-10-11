@@ -42,4 +42,4 @@ function Main(){
     console.log(unionFind.rank, unionFind.par);
 }
 
-// Main();
+Main();

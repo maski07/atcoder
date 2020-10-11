@@ -1,14 +1,19 @@
 # AtCoder 茶色まで
 ## 製造メモ
-``` JavaScript : memo
+JavaScript
+``` JavaScript
+/** メモ **/
 'use strict'
 const log = console.log;
+/** メモ **/
 function Main(input){
 	
 }
 // Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 ```
-``` Python : memo
+
+Python
+``` Python
 """ スニペット """
 def get_int():
 	return int(input())
@@ -81,7 +86,7 @@ OKの定義は、C以上の問題を0から自分で解けたこと
 - [x] 工夫がいる問題  
 	問題：abc134_c(累積max(でも解ける))、abc137_c(※)、abc175_c(※)  
 - [ ] 配列でデータを保持し、計算量を定数にする
-	問題：abc174_d(※)
+	問題：abc174_d(※)、hkkb2020_c(*)
 - [ ] 素因数分解 ([試し割り法](https://ja.wikipedia.org/wiki/試し割り法))
 - [ ] 条件を考え最適化する問題
 	問題：abc175_c(※)

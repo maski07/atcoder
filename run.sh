@@ -1,26 +1,25 @@
 # ヒアドュメント形式
-filename=abc159_d.py
+filename=abc157_c.py
 
 python3 $filename << EOS
-5
-1 1 2 1 2
+3 3
+1 7
+3 2
+1 7
 EOS
-# exit
-echo ---
-python3 $filename << EOS
-4
-1 2 3 4
-EOS
+# if 0 == 0 ; then 
+# exit 
+# fi
 exit
-echo ---
 python3 $filename << EOS
-5
-3 3 3 3 3
+3 2
+2 1
+2 3
 EOS
 echo ---
 python3 $filename << EOS
-8
-1 2 1 4 2 1 4 1
+3 1
+1 0
 EOS
 
 
