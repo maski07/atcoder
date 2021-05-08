@@ -1,31 +1,27 @@
 # ヒアドュメント形式
-filename=abc174_d_re.py
+filename=abc196.py
 
 python3 $filename << EOS
-3 3
-1 7
-3 2
-1 7
+33
 EOS
-# if 0 == 0 ; then 
-# exit 
-# fi
-exit
-python3 $filename << EOS
-3 2
-2 1
-2 3
+if [ $# = 1 ] && [ $1 == 1 ]; then exit; fi
+echo "--------"
+ython3 $filename << EOS
+1333
 EOS
-echo ---
+if [ $# = 1 ] && [ $1 == 2 ]; then  exit; fi
+echo "--------"
 python3 $filename << EOS
-3 1
-1 0
+10000000
+EOS
+if [ $# = 1 ] && [ $1 == 3 ]; then  exit; fi
+echo "--------"
+python3 $filename << EOS
+3 200
+200 100
+350 
+100 1
 EOS
 
-
-# 補足 
-# sh実行時のargsを読み取って実行する方法もある
-# for arg in "$@"; do
-#     echo "file:". ${arg}
-#     python3 200.py < ${arg}
-# done
+# 入力を外だしして見やすくしたい
+# 第1引数は、1ならテストケース1だけを出力させたい

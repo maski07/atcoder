@@ -4,8 +4,8 @@ JavaScript
 ``` JavaScript
 /** メモ **/
 'use strict'
-const log = console.log;
 /** メモ **/
+var log = console.log;
 function Main(input){
 	
 }
