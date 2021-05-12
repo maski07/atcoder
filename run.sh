@@ -1,8 +1,8 @@
 # ヒアドュメント形式
-filename=abc196.py
+filename=abc193_c.py
 
 python3 $filename << EOS
-33
+8
 EOS
 if [ $# = 1 ] && [ $1 == 1 ]; then exit; fi
 echo "--------"

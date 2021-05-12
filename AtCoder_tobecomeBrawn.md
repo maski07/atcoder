@@ -4,7 +4,7 @@ JavaScript
 ``` JavaScript
 /** メモ **/
 'use strict'
-/** メモ **/
+/**  */
 var log = console.log;
 function Main(input){
 	
@@ -19,6 +19,8 @@ def get_int():	return int(input())
 def get_ints():	return list(map(int, input().split()))
 """ スニペット """
 ```
+## AtCoder豆知識
+・10^8 ~ 10^9までのループを超えるとTREになる
 
 ## 目標
 10月までにAtCoder緑を達成する！！  

@@ -2,6 +2,16 @@
 'use strict'
 var log = console.log;
 /** メモ **/
+function MainA(input){
+    log(+input - 1);
+}
+// MainA(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+MainA('2');
+MainA('1');
+MainA('3');
+
+var log = console.log;
+/** メモ **/
 function MainB(input){
     // 正規表現で削除 *はN回以上、$は末尾
     const str = input.replace(/0*$/gi, '');
@@ -9,9 +19,9 @@ function MainB(input){
     log(str == rev ? 'Yes' : 'No');
 }
 // MainB(require("fs").readFileSync("/dev/stdin", "utf8").trim());
-MainB('1210');
-MainB('777');
-MainB('123456789');
+// MainB('1210');
+// MainB('777');
+// MainB('123456789');
 
 var log = console.log;
 /** メモ **/
