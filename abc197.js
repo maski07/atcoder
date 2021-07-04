@@ -1,5 +1,14 @@
 /** メモ **/
 var log = console.log;
+function MainA(input){
+    const S = input.split('');
+    log(S[1] + S[2] + S[0]);
+}
+// MainA(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+
+MainA('abc');
+
+var log = console.log;
 function MainB(input){
 	const [HWXY, ...tmp] = input.split('\n');
     const [H, W, X, Y] = HWXY.split(' ').map(Number);
@@ -18,6 +27,6 @@ function MainB(input){
     log(answer - 3); // (X,Y)のポイントを3回重複してるから差し引く
 }
 // MainB(require("fs").readFileSync("/dev/stdin", "utf8").trim());
-MainB('4 4 2 2\n##..\n...#\n#.#.\n.#.#');
-MainB('3 5 1 4\n#....\n#####\n....#');
-MainB('5 5 4 2\n.#..#\n#.###\n##...\n#..#.\n#.###');
+// MainB('4 4 2 2\n##..\n...#\n#.#.\n.#.#');
+// MainB('3 5 1 4\n#....\n#####\n....#');
+// MainB('5 5 4 2\n.#..#\n#.###\n##...\n#..#.\n#.###');
