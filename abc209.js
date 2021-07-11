@@ -72,6 +72,7 @@ function MainC2(input){
 	const C = Cn.sort((a,b) => a-b);
 	for(let i=0; i<N; i++){
 		const res = BigInt(C[i]) - BigInt(i);
+		// ans * resで、BigIntじゃないと処理できない
 		ans = ans * (res > 0n ? res : 0n) % mod;
 	}
 	log(ans.toString());
