@@ -109,6 +109,7 @@ function MainC3(input){
  * Accept
  */
 var log = console.log;
+const splitN = (N) => N.split().split(' ').map(Number);
 function MainC4(input){
     const lines = input.split('\n');
     const [N, K] = lines[0].split(' ').map(Number);
@@ -137,6 +138,10 @@ function MainC4(input){
     log(ans);
 }
 // MainC4(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+
+/**
+ * 書き方変えてみる
+ */
 var log = console.log;
 function MainC5(input){
     const lines = input.split('\n');
@@ -207,9 +212,6 @@ function MainC6(input){
     }
     log(ans);
 }
-/**
- * 書き方変えてみる
- */
 var log = console.log;
 function MainC7(input){
     const lines = input.split('\n');

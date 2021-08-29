@@ -2,6 +2,7 @@
 'use strict'
 /**  */
 var log = console.log;
+var splitN = (N) => N.split().split(' ').map(Number);
 function Main(input){
 	
 }
