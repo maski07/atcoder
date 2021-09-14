@@ -2,6 +2,8 @@
 ## 製造メモ
 JavaScript
 ``` JavaScript
+// cp base abc214_b.js & code abc214_b.js
+
 /** メモ **/
 'use strict'
 /**  */
