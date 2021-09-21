@@ -9,7 +9,7 @@
  * 計算量：
  *  N <= 50000
  *  i <= 50000
- *  O(n) = 50000 = 10 ^ 5 程度
+ *  O(n) = (50000 * log50000) * 50000 * 2 程度
  * 学び：
  *  if文を逆にすると処理が簡潔にならないか確認すると良い
  *  js文字列はsplitしなくてもインデックスアクセスが可能。
@@ -20,19 +20,18 @@ var log = console.log;
 var splitN = (N) => N.split().split(' ').map(Number);
 function MainC(input){
     const arr = input.split('\n');
-    const X = arr.shift();
+    const X = arr.shift();// 0の数値から始まる辞書として使える
     const N = arr.shift();
-    const dic = X.split('');// 0の数値から始まる辞書になる
-    arr.sort((a, b) =>{
+    arr.sort((a, b) => {
         const len_a = a.length;
         const len_b = b.length;
         const min = Math.min(len_a, len_b);
         for(let i=0; i<min; i++) {
-            if(a[i] !== b[i]){
-                return dic.indexOf(a[i]) - dic.indexOf(b[i]);
+            if(a[i] !== b[i]) {
+                return X.indexOf(a[i]) - X.indexOf(b[i]);
             }
         }
-        // すべて同じなら、文字数が短いほうが前になる
+        // 文字列がすべて同じなら、文字数が短いほうが前になる
         return len_a - len_b;
     });
     console.log(arr.join('\n'));
