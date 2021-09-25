@@ -57,12 +57,12 @@ function MainC2(input) {
     const Sn = arr.shift().split(' ').map(Number);
     const Tn = arr.shift().split(' ').map(Number);
     const times = Tn.splice(0, N);
-    log({Sn});
+    // log({Sn});
     for(let i=0; i<N*2; i++) {
         const nextIndex = (i+1) % N;
         const nowIndex = i%N;
-        log({nextIndex, nowIndex, times});
-        log(times[nextIndex], times[nowIndex] + Sn[nowIndex])
+        // log({nextIndex, nowIndex, times});
+        // log(times[nextIndex], times[nowIndex] + Sn[nowIndex])
         times[nextIndex]
             = Math.min(times[nextIndex], times[nowIndex] + Sn[nowIndex]);
     }
