@@ -24,8 +24,8 @@ def get_ints():	return list(map(int, input().split()))
 ## AtCoder豆知識
 ・10^8 ~ 10^9までのループを超えるとTREになる
 
-## 目標
-10月までにAtCoder緑を達成する！！  
+## もう一回ときたい
+abc214_c
 
 ## アルゴリズムを身に着ける上でのルール
 OKの定義は、C以上の問題を0から自分で解けたこと  
