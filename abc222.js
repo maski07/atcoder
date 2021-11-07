@@ -56,7 +56,7 @@ function MainC(input){
     const arr = input.split('\n');
     const [N, M] = arr.shift().split(' ').map(Number);
     const Anm = arr.map(a => a.split(''));
-    const currRate = new Array(2 * N - 1).fill(0);
+    const currRate = new Array(2 * N - 1);
     for(let i =0; i<2 * N; i++) currRate[i] = {initial_i:i, rate:0};
     // ジャンケンの結果 1: win 0: lose
     const GCPResult = (a, b) => {
@@ -86,11 +86,11 @@ function MainC(input){
         }
         // ランキング順にソート
         currRate.sort((a, b) => {
-            const rateDiff = b.rate - a.rate
+            const rateDiff = b.rate - a.rate;  // 第1ソート：rateの降順
             if(rateDiff === 0){
                 return a.initial_i - b.initial_i; // 第2ソート：indexの昇順
-            } else{
-                return rateDiff; // 第1ソート：rateの降順
+            } else {
+                return rateDiff;
             }
         });
     }
@@ -98,4 +98,6 @@ function MainC(input){
 }
 // MainC(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 // MainC('2 3\nGCP\nPPP\nCCC\nPPC');
-MainC('2 2\nGC\nPG\nCG\nPP');
+// MainC('2 2\nGC\nPG\nCG\nPP');
+
+
