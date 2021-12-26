@@ -94,14 +94,11 @@ function MainD(input){
     console.log(count);
 }
 // MainD(require("fs").readFileSync("/dev/stdin", "utf8").trim());
-
- // MainD2(require("fs").readFileSync("/dev/stdin", "utf8").trim()); 
+// MainD2(require("fs").readFileSync("/dev/stdin", "utf8").trim()); 
 MainD('6 5\n8 -3 5 7 0 -4');
 // MainD('6 5\n8 -3 5 7 0 -4 9');
 // MainD('2 -1000000000000000\n1000000000 -1000000000');
 /**
-
-8 -3 5 7 0 -4 9
-8 5 10 17 17 13 22
-
+    8 -3 5 7 0 -4 9
+    8 5 10 17 17 13 22
 */

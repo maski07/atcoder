@@ -58,8 +58,9 @@ function MainC(input) {
     console.log(String(times).split('n')[0]);
 }
 // MainC(require("fs").readFileSync("/dev/stdin", "utf8").trim());
-MainC('3\n3 0\n5 1 1\n7 1 1');
-MainC('5\n1000000000 0\n1000000000 0\n1000000000 0\n1000000000 0\n1000000000 4 1 2 3 4');
+// MainC('3\n3 0\n5 1 1\n7 1 1');
+// MainC('5\n1000000000 0\n1000000000 0\n1000000000 0\n1000000000 0\n1000000000 4 1 2 3 4');
+MainC('1\n1000000000 1 199999')
 
 function MainC2(input) {
     const arr = input.split('\n');

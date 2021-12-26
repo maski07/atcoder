@@ -16,7 +16,9 @@ function MainA(input){
 // MainA(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 // MainA('##\n.#');
 // MainA('.#\n#.');
-/**  */
+/** 
+ * reverseしなくても%10を使えばもっとソースがきれいになる。
+ */
 var log = console.log;
 var splitN = (N) => N.split().split(' ').map(Number);
 function MainB(input){
