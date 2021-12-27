@@ -2,6 +2,10 @@ import java.util.Scanner;
 import java.lang.Math;
 
 class Main {
+    public static void log(Object object) {
+        System.out.println(object);
+    }
+
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
         System.out.println("Success:" + scanner.nextLine());
