@@ -1,29 +1,35 @@
 # 標準入出力形式 (拡張子なし)
-filename=200
+filename=abc231b
 
-javaFile=$filename + ".java"
-classFile=$filename + ".class"
-
-# コンパイル
-javac $javaFile $classFile
+javaFile=$filename".java"
 
 # 実行
-java $javaFile <  << EOS
-46979
-EOS
-echo "--------"
+# java $javaFile << EOS
+# 5
+# snuke
+# snuke
+# takahashi
+# takahashi
+# takahashi
+# EOS
+# if [ $# = 1 ] && [ $1 == 1 ]; then exit; fi
+# echo "--------"
 
-java $javaFile <  << EOS
-46979
-EOS
-echo "--------"
+# java $javaFile << EOS
+# 5
+# takahashi
+# takahashi
+# aoki
+# takahashi
+# snuke
+# EOS
+# if [ $# = 1 ] && [ $1 == 2 ]; then  exit; fi
+# echo "--------"
 
-java $javaFile <  << EOS
-46979
+java $javaFile << EOS
+1
+a
 EOS
-
-# コンパイルクラス削除
-delete $classFile
 
 # python $filename < input2.txt
 # echo ---
