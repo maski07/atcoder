@@ -1,17 +1,24 @@
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.Arrays;
 
 class Main {
-    public static void log(Object object) {
+    private static void log(Object object) {
         System.out.println(object);
+    }
+    
+    private static int toInt(String str) {
+        return Integer.parseInt(str);
     }
 
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
-        System.out.println("Success:" + scanner.nextLine());
+        try(var scanner = new Scanner(System.in)){
+            var aa = scanner.nextLine();
+            solve();
+        }
     }
-
-    public static void solve() {
-
+    private static void solve() {
+        log("Yes");
+        log("No");
     }
 }
