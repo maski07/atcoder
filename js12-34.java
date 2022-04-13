@@ -6,30 +6,31 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
-
 class Main {
-
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var aa = scanner.nextInt();
-            solve();
+        char c = 'b';
+        int i = 0;
+        int n = 'c' | 'd';
+        System.out.println(n);
+        System.out.println(Character.getNumericValue(c));
+        switch (c) {
+            case 'a':
+                i++;
+            case 'e':
+                i++;
+                break;
+            case 'f':
+                i++;
+                break;
+            case 'b':
+                i++;
+            case 'c' | 'd':
+                // System.out.print("なぜとおる？");
+                i++;
+            default:
+                System.out.println(c);
         }
-    }
-    private static void solve() {
-        log("Yes");
-        log("No");
-    }
-
-    private static void log(Object object) {
-        System.out.println(object);
-    }
-
-    private static void logArray(Object[] obj) {
-        System.out.println(Arrays.deepToString(obj));
-    }
-    
-    private static int toInt(String str) {
-        return Integer.parseInt(str);
+        System.out.println(i);
     }
 }
 

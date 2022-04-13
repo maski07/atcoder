@@ -6,15 +6,22 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
-
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var aa = scanner.nextInt();
-            solve();
+        try (var scanner = new Scanner(System.in)) {
+            var L = scanner.nextLong();
+            var R = scanner.nextLong();
+            // L ~ R の最小公約数 = 2
+            // L ~ R の2の倍数ではない最大数値
+            if (R % 2 == 0) {
+                log(R - 1 - 2);
+            } else {
+                log(R - 2);
+            }
         }
     }
+
     private static void solve() {
         log("Yes");
         log("No");
@@ -27,7 +34,7 @@ class Main {
     private static void logArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
     }
-    
+
     private static int toInt(String str) {
         return Integer.parseInt(str);
     }

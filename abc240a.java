@@ -6,18 +6,21 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
-
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var aa = scanner.nextInt();
-            solve();
+        try (var scanner = new Scanner(System.in)) {
+            var a = scanner.nextInt();
+            var b = scanner.nextInt();
+            if (a == b + 1
+                    || a + 1 == b
+                    || (a == 10 && b == 1)
+                    || (a == 1 && b == 10)) {
+                log("Yes");
+            } else {
+                log("No");
+            }
         }
-    }
-    private static void solve() {
-        log("Yes");
-        log("No");
     }
 
     private static void log(Object object) {
@@ -27,7 +30,7 @@ class Main {
     private static void logArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
     }
-    
+
     private static int toInt(String str) {
         return Integer.parseInt(str);
     }

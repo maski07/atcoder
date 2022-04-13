@@ -6,18 +6,26 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
-
 class Main {
-
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var aa = scanner.nextInt();
-            solve();
+        try (var scanner = new Scanner(System.in)) {
+            int N = scanner.nextInt();
+            int[] An = new int[N];
+            for (int i = 0; i < N; i++) {
+                An[i] = scanner.nextInt();
+            }
+            solve(N, An);
         }
     }
-    private static void solve() {
-        log("Yes");
-        log("No");
+
+    private static void solve(int N, int[] An) {
+        var pizza = new ArrayList<Integer>(Arrays.asList(360));
+        var now = 0;
+        for (var i = 0; i < An.length(); i++) {
+            while (true) {
+                var piece = pizza.get(0);
+            }
+        }
     }
 
     private static void log(Object object) {
@@ -27,7 +35,7 @@ class Main {
     private static void logArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
     }
-    
+
     private static int toInt(String str) {
         return Integer.parseInt(str);
     }

@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.Collections;
@@ -6,15 +8,19 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
-
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var aa = scanner.nextInt();
-            solve();
+        try (var scanner = new Scanner(System.in)) {
+            var N = scanner.nextInt();
+            Set<Integer> all = new HashSet<Integer>();
+            for (var i = 0; i < N; i++) {
+                all.add(scanner.nextInt());
+            }
+            log(all.size());
         }
     }
+
     private static void solve() {
         log("Yes");
         log("No");
@@ -27,7 +33,7 @@ class Main {
     private static void logArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
     }
-    
+
     private static int toInt(String str) {
         return Integer.parseInt(str);
     }
