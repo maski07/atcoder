@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.function.Function;
 
 
 class Main {
@@ -47,6 +48,7 @@ class Main {
         private static int toInt(String str) {
             return Integer.parseInt(str);
         }
+    }
 }
 
 /**
