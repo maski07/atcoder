@@ -1,14 +1,12 @@
 import java.util.Scanner;
 import java.lang.Math;
 import java.util.Arrays;
-import java.util.ArrayList;
 import java.util.function.Function;
 
 class Main {
-    private static int Amemo;
-    private static int Bmemo;
+    private static boolean[] dp;
+    private static boolean[] ep;
     private static int K;
-    private static boolean answer = false;
 
     public static void main(String[] args) {
         try (var scanner = new Scanner(System.in)) {
@@ -16,11 +14,16 @@ class Main {
             K = scanner.nextInt();
             var An = Util.getArray(N, scanner);
             var Bn = Util.getArray(N, scanner);
-            Amemo = An[0];
-            Bmemo = Bn[0];
+            dp = new boolean[N + 1];
+            ep = new boolean[N + 1];
+            dp[0] = ep[0] = true;
+
             for (var i = 1; i < N; i++) {
-                dfs(An[i], Bn[i]);
-                if (Amemo == -1 && Bmemo == -1) {
+                dp[i] = dp[i - 1] && Math.abs(An[i] - An[i - 1]) <= K
+                        || ep[i - 1] && Math.abs(An[i] - Bn[i - 1]) <= K;
+                ep[i] = dp[i - 1] && Math.abs(Bn[i] - An[i - 1]) <= K
+                        || ep[i - 1] && Math.abs(Bn[i] - Bn[i - 1]) <= K;
+                if (!dp[i] && !ep[i]) {
                     log("No");
                     return;
                 }
@@ -29,28 +32,12 @@ class Main {
         }
     }
 
-    private static void dfs(int An, int Bn) {
-        int Acheck = -1;
-        int Bcheck = -1;
-        // log(Amemo, Bmemo, An, Bn);
-        if (Amemo != -1 && Math.abs(Amemo - An) <= K
-                || Bmemo != -1 && Math.abs(Bmemo - An) <= K) {
-            Acheck = An;
-        }
-        if (Amemo != -1 && Math.abs(Amemo - Bn) <= K
-                || Bmemo != -1 && Math.abs(Bmemo - Bn) <= K) {
-            Bcheck = Bn;
-        }
-        Amemo = Acheck;
-        Bmemo = Bcheck;
+    private static void log(Object obj) {
+        System.out.println(obj);
     }
 
-    private static void log(Object object) {
-        System.out.println(object);
-    }
-
-    private static void log(Object... object) {
-        System.out.println(Arrays.toString(object));
+    private static void log(Object... obj) {
+        System.out.println(Arrays.toString(obj));
     }
 
     private static void logDeepArray(Object[] obj) {
