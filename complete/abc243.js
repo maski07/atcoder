@@ -10,9 +10,10 @@ function MainB(input) {
     let count2 = 0;
     const set = new Set(An);
     // log({An, Bn})
+    var debug = true;
     for(let i=0; i<N; i++){
         if(An[i] === Bn[i]){
-            // log(An[i], Bn[i]);
+            log(An[i], Bn[i]);
             count++;
         } else if(set.has(Bn[i])){
             count2++;

@@ -34,7 +34,7 @@ class Main {
     }
 
     public static class Util {
-        public static int[] getArray(int N, Scanner scanner) {
+        public static int[] getIntArray(int N, Scanner scanner) {
             Function<Integer, int[]> get = (argN) -> {
                 var arr = new int[argN.intValue()];
                 for (var i = 0; i < argN.intValue(); i++) {
