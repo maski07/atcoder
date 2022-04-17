@@ -55,10 +55,10 @@ class Main {
         if (memo[N][now] != -1) {
             return memo[N][now];
         }
-        var count = dfs(N - 1, now) % mod
-                + dfs(N - 1, now - 1) % mod
-                + dfs(N - 1, now + 1) % mod;
-        memo[N][now] = count;
+        var count = dfs(N - 1, now)
+                + dfs(N - 1, now - 1)
+                + dfs(N - 1, now + 1);
+        memo[N][now] = count % mod;
         return count;
     }
 
