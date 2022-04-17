@@ -17,7 +17,7 @@ class Main {
 
     public static void main(String[] args) {
         try(var scanner = new Scanner(System.in)){
-            var aa = scanner.nextInt();
+            var a = scanner.nextInt();
             solve();
         }
     }
@@ -36,6 +36,16 @@ class Main {
 
     private static void logDeepArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
+    }
+
+    private static int loggedCount = 0;
+
+    private static void timeLog(Object... obj) {
+        final int logCount = 0;
+        if (loggedCount <= logCount) {
+            System.out.println(Arrays.toString(obj));
+            loggedCount++;
+        }
     }
 
     public static class Util {
