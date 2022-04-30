@@ -11,30 +11,20 @@ class Main {
     public static void main(String[] args) {
         try (var scanner = new Scanner(System.in)) {
             var N = scanner.nextInt();
+            var K = scanner.nextInt();
             var hn = Util.getIntArray(N, scanner);
             var dp = new int[N + 1];
+            Arrays.fill(dp, Integer.MAX_VALUE);
             dp[0] = 0;
             for (var i = 1; i < N; i++) {
-                var now = hn[i];
-                var preOne = hn[i - 1];
-                var preTwo = hn[Math.max(i - 2, 0)];
-                // 1つ後ろと2つ後ろから来たパターンで小さい方を採用する
-                dp[i] = Math.min(Math.abs(now - preOne) + dp[i - 1], Math.abs(now - preTwo) + dp[Math.max(i - 2, 0)]);
-                // log(dp[i],
-                // "i", i,
-                // "now", now,
-                // "pre1", preOne, dp[i - 1],
-                // "pre2", preTwo, dp[Math.max(i - 2, 0)],
-                // "abs1", Math.abs(now - preOne) + dp[i - 1],
-                // "abs2", Math.abs(now - preTwo) + dp[Math.max(i - 2, 0)]);
+                // K個後ろのパターンで小さい方を採用する
+                for (var j = 1; j <= K; j++) {
+                    var preIndex = Math.max(i - j, 0);
+                    dp[i] = Math.min(dp[i], Math.abs(hn[i] - hn[preIndex]) + dp[preIndex]);
+                }
             }
             log(dp[N - 1]);
         }
-    }
-
-    private static void solve() {
-        log("Yes");
-        log("No");
     }
 
     private static void log(Object object) {

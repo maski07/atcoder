@@ -1,37 +1,24 @@
-
 /** 既存メソッドで使用 */
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.Arrays;
 /** よく使うやつを定義 */
 import java.lang.Math;
+import java.util.Comparator;
+import java.util.StringJoiner;
+/** サンプルコード */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 class Main {
 
     public static void main(String[] args) {
-        try (var scanner = new Scanner(System.in)) {
-            var N = scanner.nextInt();
-            var hn = Util.getIntArray(N, scanner);
-            var dp = new int[N + 1];
-            dp[0] = 0;
-            for (var i = 1; i < N; i++) {
-                var now = hn[i];
-                var preOne = hn[i - 1];
-                var preTwo = hn[Math.max(i - 2, 0)];
-                // 1つ後ろと2つ後ろから来たパターンで小さい方を採用する
-                dp[i] = Math.min(Math.abs(now - preOne) + dp[i - 1], Math.abs(now - preTwo) + dp[Math.max(i - 2, 0)]);
-                // log(dp[i],
-                // "i", i,
-                // "now", now,
-                // "pre1", preOne, dp[i - 1],
-                // "pre2", preTwo, dp[Math.max(i - 2, 0)],
-                // "abs1", Math.abs(now - preOne) + dp[i - 1],
-                // "abs2", Math.abs(now - preTwo) + dp[Math.max(i - 2, 0)]);
-            }
-            log(dp[N - 1]);
+        try(var scanner = new Scanner(System.in)){
+            var a = scanner.nextInt();
+            solve();
         }
     }
-
     private static void solve() {
         log("Yes");
         log("No");
@@ -74,5 +61,23 @@ class Main {
         private static int toInt(String str) {
             return Integer.parseInt(str);
         }
+    }
+}
+
+/**
+ * よく使うコードリスト
+ */
+public class SampleCode {
+    private static void Sample() {
+        /**
+         * ArrayList
+         * https://docs.oracle.com/javase/jp/8/docs/api/java/util/ArrayList.html
+         */
+        List<Integer> arrayList = new ArrayList<Integer>();
+        arrayList.indexOf(0); // indexを返却
+        arrayList.sort(Comparator.naturalOrder()); // ソート
+        /**
+         * 配列 https://docs.oracle.com/javase/jp/8/docs/api/java/sql/Array.html
+         */
     }
 }
