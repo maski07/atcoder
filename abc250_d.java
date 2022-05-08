@@ -1,27 +1,39 @@
+
 /** 既存メソッドで使用 */
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.Arrays;
 /** よく使うやつを定義 */
 import java.lang.Math;
-import java.util.Comparator;
-import java.util.StringJoiner;
-/** サンプルコード */
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var a = scanner.nextInt();
-            solve();
+        try (var scanner = new Scanner(System.in)) {
+            var N = scanner.nextLong();
+            // エラストテネスの篩
+            var len = (int) Math.pow(10L, Math.log10(N) / 3L) - 1;
+            var noPrimes = new boolean[len + 1];
+            List<Integer> primes = new ArrayList<>();
+            for (var i = 2; i <= len; i++) {
+                var noPrime = noPrimes[i];
+                if (!noPrime) {
+                    primes.add(i);
+                    for (var j = 2; j * i <= len; j++) {
+                        noPrimes[i * j] = true;
+                    }
+                }
+            }
+            var primeCount = primes.size();
+            var answer = (primeCount * (primeCount - 1)) / 2;
+            log(answer);
         }
     }
-    private static void solve() {
-        log("Yes");
-        log("No");
+
+    private static int P(int n) {
+        return n * P(n - 1);
     }
 
     private static void log(Object object) {
@@ -61,40 +73,5 @@ class Main {
         private static int toInt(String str) {
             return Integer.parseInt(str);
         }
-    }
-
-    public static class AtCoder {
-        public static List<Integer> getPrime(int N) {
-            var noPrimes = new boolean[N + 1];
-            List<Integer> primes = new ArrayList<>();
-            for (var i = 2; i <= N; i++) {
-                var noPrime = noPrimes[i];
-                if (!noPrime) {
-                    primes.add(i);
-                    for (var j = 2; j * i <= N; j++) {
-                        noPrimes[i * j] = true;
-                    }
-                }
-            }
-            return primes;
-        }
-    }
-}
-
-/**
- * よく使うコードリスト
- */
-public class SampleCode {
-    private static void Sample() {
-        /**
-         * ArrayList
-         * https://docs.oracle.com/javase/jp/8/docs/api/java/util/ArrayList.html
-         */
-        List<Integer> arrayList = new ArrayList<Integer>();
-        arrayList.indexOf(0); // indexを返却
-        arrayList.sort(Comparator.naturalOrder()); // ソート
-        /**
-         * 配列 https://docs.oracle.com/javase/jp/8/docs/api/java/sql/Array.html
-         */
     }
 }

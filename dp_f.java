@@ -1,3 +1,4 @@
+
 /** 既存メソッドで使用 */
 import java.util.Scanner;
 import java.util.function.Function;
@@ -10,15 +11,42 @@ import java.util.StringJoiner;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 class Main {
 
+    /**
+     * 順不同ではなかった。
+     */
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var a = scanner.nextInt();
-            solve();
+        try (var scanner = new Scanner(System.in)) {
+            var s = scanner.next();
+            var t = scanner.next();
+            Map<String, Integer> sStr = new HashMap<>();
+            Map<String, Integer> tStr = new HashMap<>();
+
+            for (var str : s.split("")) {
+                sStr.put(str, sStr.getOrDefault(str, 0) + 1);
+            }
+            for (var str : t.split("")) {
+                tStr.put(str, tStr.getOrDefault(str, 0) + 1);
+            }
+            var answer = "";
+            for (char alphabet = 'a'; alphabet <= 'z'; alphabet++) {
+                var str = String.valueOf(alphabet);
+                var sCount = sStr.getOrDefault(str, 0);
+                var tCount = tStr.getOrDefault(str, 0);
+                log(str, sCount, tCount);
+                if (sCount > 0 && tCount > 0) {
+                    var diff = Math.min(sCount, tCount);
+                    answer += str.repeat(diff);
+                }
+            }
+            log(answer);
         }
     }
+
     private static void solve() {
         log("Yes");
         log("No");
@@ -60,23 +88,6 @@ class Main {
 
         private static int toInt(String str) {
             return Integer.parseInt(str);
-        }
-    }
-
-    public static class AtCoder {
-        public static List<Integer> getPrime(int N) {
-            var noPrimes = new boolean[N + 1];
-            List<Integer> primes = new ArrayList<>();
-            for (var i = 2; i <= N; i++) {
-                var noPrime = noPrimes[i];
-                if (!noPrime) {
-                    primes.add(i);
-                    for (var j = 2; j * i <= N; j++) {
-                        noPrimes[i * j] = true;
-                    }
-                }
-            }
-            return primes;
         }
     }
 }
