@@ -2,6 +2,8 @@
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 /** よく使うやつを定義 */
 import java.lang.Math;
 import java.util.Comparator;
