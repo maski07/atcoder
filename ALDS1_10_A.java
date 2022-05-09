@@ -3,47 +3,30 @@
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.Arrays;
+/** サンプルコード */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 /** よく使うやつを定義 */
 import java.lang.Math;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
+import java.util.StringJoiner;
+import java.util.Comparator;
 
-class Main {
+public class Main {
 
     public static void main(String[] args) {
-        try (var scanner = new Scanner(System.in)) {
-            var N = scanner.nextLong();
-            // エラストテネスの篩
-            var len = (int) Math.pow(10, Math.log10(N) / 3L);
-            var noPrimes = new boolean[len + 1];
-            List<Integer> primes = new ArrayList<>();
-            for (var i = 2; i <= len; i++) {
-                var noPrime = noPrimes[i];
-                if (!noPrime) {
-                    primes.add(i);
-                    for (var j = 2; j * i <= len; j++) {
-                        noPrimes[i * j] = true;
-                    }
-                }
-            }
-            var answer = 0;
-            for (var i = 0; i < primes.size(); i++) {
-                var p = primes.get(i);
-                for (var j = i + 1; j < primes.size(); j++) {
-                    var q = primes.get(j);
-                    if (p * Math.pow(q, 3) <= N) {
-                        answer++;
-                    } else {
-                        break;
-                    }
-                }
-            }
-            log(answer);
+        try (Scanner scanner = new Scanner(System.in)) {
+            int N = scanner.nextInt();
+            log(fib(N));
         }
     }
 
-    private static int P(int n) {
-        return n * P(n - 1);
+    private static int fib(int n) {
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+        return fib(n - 1) + fib(n - 2);
     }
 
     private static void log(Object object) {
