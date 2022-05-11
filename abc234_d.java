@@ -8,6 +8,7 @@ import java.util.Queue;
 class Main {
 
     /**
+     * 解き直す
      * ・解法
      * 平行二分探索木
      * SegTree
