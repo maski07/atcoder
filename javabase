@@ -6,12 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 /** よく使うやつを定義 */
 import java.lang.Math;
-import java.util.Comparator;
-import java.util.StringJoiner;
-/** サンプルコード */
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 class Main {
 
@@ -36,16 +32,6 @@ class Main {
 
     private static void logDeepArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
-    }
-
-    private static int loggedCount = 0;
-
-    private static void timeLog(Object... obj) {
-        final int logCount = 0;
-        if (loggedCount <= logCount) {
-            System.out.println(Arrays.toString(obj));
-            loggedCount++;
-        }
     }
 
     public static class Util {
@@ -83,20 +69,3 @@ class Main {
     }
 }
 
-/**
- * よく使うコードリスト
- */
-public class SampleCode {
-    private static void Sample() {
-        /**
-         * ArrayList
-         * https://docs.oracle.com/javase/jp/8/docs/api/java/util/ArrayList.html
-         */
-        List<Integer> arrayList = new ArrayList<Integer>();
-        arrayList.indexOf(0); // indexを返却
-        arrayList.sort(Comparator.naturalOrder()); // ソート
-        /**
-         * 配列 https://docs.oracle.com/javase/jp/8/docs/api/java/sql/Array.html
-         */
-    }
-}
