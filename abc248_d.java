@@ -1,18 +1,19 @@
-
-/** 既存メソッドで使用 */
 import java.util.Scanner;
-import java.util.function.Function;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/** よく使うやつを定義 */
 import java.lang.Math;
-import java.util.Comparator;
-import java.util.StringJoiner;
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Collections;
 
 class Main {
 
+    /**
+     * 解き直す
+     * ・2分探索
+     */
     public static void main(String[] args) {
         try (var scanner = new Scanner(System.in)) {
             var N = scanner.nextInt();
@@ -21,28 +22,36 @@ class Main {
 
             for (var i = 0; i < N; i++) {
                 An[i] = scanner.nextInt();
-            }
-
-            for (var i = 0; i < N; i++) {
                 var permulative = map.getOrDefault(An[i], new ArrayList<>());
-                places.add(i);
-                map.put(An[i], places);
+                permulative.add(i);
+                map.put(An[i], permulative);
             }
-
             var Q = scanner.nextInt();
+            var out = new StringBuilder(N);
             for (var i = 0; i < Q; i++) {
                 var L = scanner.nextInt();
                 var R = scanner.nextInt();
                 var X = scanner.nextInt();
-
+                var target = map.getOrDefault(X, new ArrayList<>());
+                var answer = 0;
+                // 2分探索にする
+                var left = lower_bound(target, L - 1);
+                var right = upper_bound(target, R - 1);
+                // log(L, R, left, right, Arrays.toString(target.toArray()));
+                out.append(right - left + "\n");
             }
-            solve();
+            log(out.toString().trim());
         }
     }
 
-    private static void solve() {
-        log("Yes");
-        log("No");
+    private static int lower_bound(List<Integer> array, int key) {
+        int lower = ~Collections.binarySearch(array, key, (x, y) -> x.compareTo(y) >= 0 ? 1 : -1);
+        return lower;
+    }
+
+    private static int upper_bound(List<Integer> array, int key) {
+        int upper = ~Collections.binarySearch(array, key, (x, y) -> x.compareTo(y) > 0 ? 1 : -1);
+        return upper;
     }
 
     private static void log(Object object) {
@@ -55,49 +64,5 @@ class Main {
 
     private static void logDeepArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
-    }
-
-    private static int loggedCount = 0;
-
-    private static void timeLog(Object... obj) {
-        final int logCount = 0;
-        if (loggedCount <= logCount) {
-            System.out.println(Arrays.toString(obj));
-            loggedCount++;
-        }
-    }
-
-    public static class Util {
-        public static int[] getIntArray(int N, Scanner scanner) {
-            Function<Integer, int[]> get = (argN) -> {
-                var arr = new int[argN.intValue()];
-                for (var i = 0; i < argN.intValue(); i++) {
-                    arr[i] = scanner.nextInt();
-                }
-                return arr;
-            };
-            return get.apply(N);
-        }
-
-        private static int toInt(String str) {
-            return Integer.parseInt(str);
-        }
-    }
-
-    public static class AtCoder {
-        public static List<Integer> getPrime(int N) {
-            var noPrimes = new boolean[N + 1];
-            List<Integer> primes = new ArrayList<>();
-            for (var i = 2; i <= N; i++) {
-                var noPrime = noPrimes[i];
-                if (!noPrime) {
-                    primes.add(i);
-                    for (var j = 2; j * i <= N; j++) {
-                        noPrimes[i * j] = true;
-                    }
-                }
-            }
-            return primes;
-        }
     }
 }
