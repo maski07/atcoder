@@ -46,6 +46,26 @@ public class SampleCode {
             }
             return primes;
         }
-        public static 
+
+        /**
+         * 最大公約数
+         */
+        private static long gcd(long a, long b) {
+            long temp;
+            long c = a;
+            c *= b;
+            while ((temp = a % b) != 0) {
+                a = b;
+                b = temp;
+            }
+            return (long) b;
+        }
+
+        /**
+         * 最小公倍数
+         */
+        private static long lcm(long a, long b) {
+            return (long) gcd(a, b) / (a * b);
+        }
     }
 }
