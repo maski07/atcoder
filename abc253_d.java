@@ -18,11 +18,15 @@ class Main {
             var A = scanner.nextLong();
             var B = scanner.nextLong();
             var lcm = lcm(A, B);
-            var total = N * (N + 1) / 2;
-            log(lcm);
-            var ans = total - N / A * A - total / B + total / lcm;
+            var total = f(N);
+            log(lcm(4, 8));
+            var ans = total - A * f(N / A) - B * f(N / B) + lcm * f(N / lcm);
             log(ans);
         }
+    }
+
+    public static long f(long N) {
+        return N * (N + 1) / 2;
     }
 
     private static void log(Object object) {
@@ -37,7 +41,10 @@ class Main {
         System.out.println(Arrays.deepToString(obj));
     }
 
-    private static long lcm(long a, long b) {
+    /**
+     * 最大公約数
+     */
+    private static long gcd(long a, long b) {
         long temp;
         long c = a;
         c *= b;
@@ -45,6 +52,13 @@ class Main {
             a = b;
             b = temp;
         }
-        return (long) (c / b);
+        return (long) b;
+    }
+
+    /**
+     * 最小公倍数
+     */
+    private static long lcm(long a, long b) {
+        return (long) gcd(a, b) / (a * b);
     }
 }

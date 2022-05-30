@@ -32,6 +32,9 @@ public class SampleCode {
     }
 
     public static class AtCoder {
+        /**
+         * 素数の取得（エラストテネスの篩)
+         */
         public static List<Integer> getPrime(int N) {
             var noPrimes = new boolean[N + 1];
             List<Integer> primes = new ArrayList<>();
@@ -48,7 +51,7 @@ public class SampleCode {
         }
 
         /**
-         * 最大公約数
+         * 最大公約数（ユークリッドの互除法）
          */
         private static long gcd(long a, long b) {
             long temp;
