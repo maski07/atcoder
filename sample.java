@@ -24,13 +24,11 @@ public class SampleCode {
     }
 
     private static int lower_bound(List<Integer> array, int key) {
-        int lower = ~Collections.binarySearch(array, key, (x, y) -> x.compareTo(y) >= 0 ? 1 : -1);
-        return lower;
+        return ~Collections.binarySearch(array, key, (x, y) -> x.compareTo(y) >= 0 ? 1 : -1);
     }
 
     private static int upper_bound(List<Integer> array, int key) {
-        int upper = ~Collections.binarySearch(array, key, (x, y) -> x.compareTo(y) > 0 ? 1 : -1);
-        return upper;
+        return ~Collections.binarySearch(array, key, (x, y) -> x.compareTo(y) > 0 ? 1 : -1);
     }
 
     public static class AtCoder {

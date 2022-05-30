@@ -37,7 +37,6 @@ class Main {
                 // 2分探索にする
                 var left = lower_bound(target, L - 1);
                 var right = upper_bound(target, R - 1);
-                // log(L, R, left, right, Arrays.toString(target.toArray()));
                 out.append(right - left + "\n");
             }
             log(out.toString().trim());
