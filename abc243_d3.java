@@ -27,6 +27,7 @@ class Main {
             }
 
             var sb = new StringBuilder();
+
             var size = q.size();
             for (var i = 0; i < size; i++) {
                 sb.append(q.pop());

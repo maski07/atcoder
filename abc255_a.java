@@ -1,3 +1,4 @@
+
 /** 既存メソッドで使用 */
 import java.util.Scanner;
 import java.util.Arrays;
@@ -13,10 +14,15 @@ import java.util.HashMap;
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
-            var N = scanner.nextInt();
-            log("Yes");
-            log("No");    
+        try (var scanner = new Scanner(System.in)) {
+            var R = scanner.nextInt();
+            var C = scanner.nextInt();
+            var arr = new int[2][2];
+            arr[0][0] = scanner.nextInt();
+            arr[0][1] = scanner.nextInt();
+            arr[1][0] = scanner.nextInt();
+            arr[1][1] = scanner.nextInt();
+            log(arr[R - 1][C - 1]);
         }
     }
 
@@ -32,4 +38,3 @@ class Main {
         System.out.println(Arrays.deepToString(obj));
     }
 }
-

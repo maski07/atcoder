@@ -1,3 +1,4 @@
+
 /** 既存メソッドで使用 */
 import java.util.Scanner;
 import java.util.Arrays;
@@ -13,10 +14,9 @@ import java.util.HashMap;
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
+        try (var scanner = new Scanner(System.in)) {
             var N = scanner.nextInt();
-            log("Yes");
-            log("No");    
+            log((long) Math.pow(2, N));
         }
     }
 
@@ -32,4 +32,3 @@ class Main {
         System.out.println(Arrays.deepToString(obj));
     }
 }
-

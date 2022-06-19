@@ -3,6 +3,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * よく使うコードリスト
@@ -15,12 +16,26 @@ public class SampleCode {
          */
         List<Integer> arrayList = new ArrayList<Integer>();
         arrayList.indexOf(0); // indexを返却
-        arrayList.sort(Comparator.naturalOrder()); // ソート
+        arrayList.sort(Comparator.naturalOrder());// ソート
         // ArrayList -> 配列への変換
+        // https://docs.oracle.com/javase/jp/8/docs/api/java/sql/Array.html
         Integer[] placeArray = arrayList.toArray(new Integer[target.size()]);
+
         /**
-         * 配列 https://docs.oracle.com/javase/jp/8/docs/api/java/sql/Array.html
+         * Arrays
          */
+        // ソート
+        var N = 100;
+        var arr = new int[N][2];
+        Arrays.sort(arr, new Comparator<int[]>() {
+            public int compare(int[] a, int[] b) {
+                if (a[0] == b[0]) {
+                    return a[1] - b[1];
+                } else {
+                    return a[0] - b[0];
+                }
+            }
+        });
     }
 
     private static int lower_bound(List<Integer> array, int key) {
