@@ -36,8 +36,10 @@ class Main {
             var num1 = arr[0][0];
             var num2 = arr[0][1];
             for (var i = 1; i < N; i++) {
-                if (arr[i][0] <= num2 && num2 <= arr[i][1]) {
-                    num2 = arr[i][1];
+                if (arr[i][0] <= num2) {
+                    if (num2 <= arr[i][1]) {
+                        num2 = arr[i][1];
+                    }
                 } else {
                     System.out.print(num1);
                     System.out.print(" ");
