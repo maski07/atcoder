@@ -36,6 +36,12 @@ public class SampleCode {
                 }
             }
         });
+
+        /** char[]をListに変換 */
+        List<Character> S = "char[]をListに変換"
+                .chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.toList());
     }
 
     private static int lower_bound(List<Integer> array, int key) {
