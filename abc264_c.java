@@ -46,8 +46,6 @@ class Main {
                             || arrw.size() != W2) {
                         continue;
                     }
-                    // log("arrh", arrh);
-                    // log("arrw", arrw);
                     var found = true;
                     for (var i = 0; i < H2; i++) {
                         var h = arrh.get(i);
@@ -59,6 +57,7 @@ class Main {
                             }
                         }
                     }
+                    
                     if (found) {
                         log("Yes");
                         return;

@@ -8,7 +8,7 @@ JavaScript
 'use strict'
 /**  */
 var log = console.log;
-function Main(input){
+function Main(input) {
 	
 }
 // Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());
@@ -31,7 +31,7 @@ abc214_c
 7/20:深さ優先探索、最小公倍数、最大公約数  
 7/27:順列の全列挙、2nや3n通りの全列挙(bit演算)、累積和(一次元のみ)  
 8/3:累積和(一次元のみ)、木の基本的な性質、配列の二分探索  
-8/10:茶色問題をとく  
+8/10:茶色問題をとく
 9/7  :茶色問題をとく(R300-500)
 9/14 :茶色問題をとく(R400-600)
 9/21 :メモ化再帰、幅優先探索 
