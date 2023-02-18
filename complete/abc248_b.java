@@ -14,14 +14,18 @@ import java.lang.Math;
 class Main {
 
     /**
-     * todo この計算式でなんでダメなのかが不明
+     * この計算式でなんでダメなのかが不明
      * テスト内容が公開されたら確認してみる
+     * → おそらくMath.logの精度が悪い。
+     * log 25/22 は0.05だが、0と計算される。
      */
     public static void main(String[] args) {
         try (var scanner = new Scanner(System.in)) {
             var A = scanner.nextInt();
             var B = scanner.nextInt();
             var K = scanner.nextInt();
+            log(Math.log(25 / 22));
+            log(Math.log(K));
             log((int) Math.ceil(Math.log(B / A) / Math.log(K)));
         }
     }
@@ -36,22 +40,5 @@ class Main {
 
     private static void logDeepArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
-    }
-
-    public static class Util {
-        public static int[] getIntArray(int N, Scanner scanner) {
-            Function<Integer, int[]> get = (argN) -> {
-                var arr = new int[argN.intValue()];
-                for (var i = 0; i < argN.intValue(); i++) {
-                    arr[i] = scanner.nextInt();
-                }
-                return arr;
-            };
-            return get.apply(N);
-        }
-
-        private static int toInt(String str) {
-            return Integer.parseInt(str);
-        }
     }
 }

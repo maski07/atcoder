@@ -6,19 +6,19 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
-import java.math.BigDecimal;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.stream.Collectors;
-import java.util.Date;
 
 class Main {
+
     public static void main(String[] args) {
-        var date = new Date();
-        log(String.format("%11s", BigDecimal.valueOf(2147483648L).toString())
-                .replace(" ", "0"));
+        try (var scanner = new Scanner(System.in)) {
+            var N = scanner.nextInt();
+            log("Yes");
+            log("No");
+        }
     }
 
     private static void log(Object object) {
@@ -28,8 +28,8 @@ class Main {
     private static void log(Object... object) {
         System.out.println(Arrays.toString(object));
     }
-}
 
-public class Sample {
-    public String test;
+    private static void logDeepArray(Object[] obj) {
+        System.out.println(Arrays.deepToString(obj));
+    }
 }
