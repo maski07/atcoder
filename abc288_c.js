@@ -50,62 +50,53 @@ function MainC(input) {
 
 var log = console.log;
 class UnionFind {
-    constructor() {
-      this.pair = [];
-      this.size = [];
-      this.group;
+    constructor(n){
+        this.par = new Array(n);
+        this.rank = new Array(n);
+        for(let i=0; i<n; i++){
+            this.par[i] = i;
+            this.rank[i] = i;
+        }
     }
-    init(n) {
-      for (let i = 1; i <= n; i++) this.pair[i] = -1;
-      for (let i = 1; i <= n; i++) this.size[i] = 1;
-      this.group = n;
+    find(x){
+        if(this.par[x] === x){
+            return x;
+        } else{
+            return this.par[x] = this.find(this.par[x]);
+        }
     }
-    root(x) {
-      while (true) {
-        if (this.pair[x] == -1) break;
-        x = this.pair[x];
-      }
-      return x;
+    unite(x,y){
+        x = this.find(x);
+        y = this.find(y);
+        if(x===y) return;
+        if(this.rank[x] < this.rank[y]){
+            this.par[x] = y;
+        } else {
+            this.par[y] = x;
+            if(this.rank[x] === this.rank[y]) this.rank[x]++;
+        }
     }
-    unite(u, v) {
-      let rootU = this.root(u);
-      let rootV = this.root(v);
-      if (rootU == rootV) return;
-      this.group--;
-      if (this.size[rootU] < this.size[rootV]) {
-        this.pair[rootU] = rootV;
-        this.size[rootV] = this.size[rootU] + this.size[rootV];
-      } else {
-        this.pair[rootV] = rootU;
-        this.size[rootU] = this.size[rootU] + this.size[rootV];
-      }
+    same(x,y){
+        return this.find(x) == this.find(y);
     }
-    same(u, v) {
-      return this.root(u) === this.root(v);
-    }
-    getGroupCount() {
-      return this.group;
-    }
-  }
+}
 function MainC2(input) {
     const arr = input.split('\n');
     const [N, M] = arr.shift().split(' ').map(Number);
     const ABm = arr.map(x => x.split(' ').map(Number));
-    let unionFind = new UnionFind();
-    unionFind.init(N);
+    const unionFind = new UnionFind(N);
     let answer = 0;
     for(let i=0; i<M; i++){
         const [front, back] = ABm[i];
         // log({uni: unionFind.same(front, back), front, back, par:[...unionFind.par]})
         if(unionFind.same(front, back)){
             answer++;
-        } else {
-            unionFind.unite(front, back);
         }
+        unionFind.unite(front, back);
     }
     log(answer);
 }
-// MainC(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+// MainC2(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 MainC2('6 7\n1 2\n1 3\n2 3\n4 2\n6 5\n4 6\n4 5');
 MainC2('4 2\n1 2\n3 4');
 MainC2('5 3\n1 2\n1 3\n2 3');
