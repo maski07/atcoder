@@ -9,7 +9,7 @@
  *  answerの出力
  */
 var log = console.log;
-function MainC(input){
+function MainC(input) {
     const arr = input.split('\n');
     const [N, M] = arr.shift().split(' ').map(Number);
     const Sm = arr.filter((val, i) => i%2).map(x => x.split(' ').map(Number));
