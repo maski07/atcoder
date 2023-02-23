@@ -17,7 +17,6 @@ function MainC(input){
         }
         return diff;
     }
-    // todo: be causions it should be bigint.
     let currentPrice = 0;
     let minPrice = Number.MAX_VALUE;
     let S = arr.shift();
