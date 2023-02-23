@@ -4,7 +4,6 @@
 /**  */
 var log = console.log;
 // Aを回して、回文との文字列がいくつ異なるのかを出す。
-// 計算量：: (5000/2) * 5000 = out?
 function MainC(input){
     const arr = input.split('\n');
     const [N, A, B] = arr.shift().split(' ').map(Number);
