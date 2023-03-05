@@ -33,6 +33,6 @@ function MainC(input) {
 // MainC(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 MainC('3\n3 4 5\n4\n4 5 6 8\n15');
 MainC('4\n2 3 4 5\n4\n3 4 5 6\n8');
-MainC('4\n2 5 7 8\n5\n2 9 10 11 19\n20');
+MainC('4\n2 5 7 8\n5\n2 9 10 11 19\n20')
 
 

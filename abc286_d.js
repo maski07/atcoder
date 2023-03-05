@@ -2,16 +2,27 @@
 'use strict'
 /**  */
 var log = console.log;
-var splitN = (N) => N.split().split(' ').map(Number);
-function MainA(input){
-	
-}
-// MainA(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+function MainC(input) {
+    const arr = input.split('\n');
+    const [N, X] = arr.shift().split(' ').map(Number);
+    const ABn = arr.map(x => x.split(' ').map(Number));
+    const canPay = new Array(X).fill(false);
+    canPay[0] = true;
+    const payMoney = new Array(X).fill(new Array(2).fill(0));
+    ABn.sort();
+    ABn.foreach((x, i) => {
+        canPay[x[0]] = true;
+        payMoney[x[0]][i] = 1;
+    });
+    for(let i=1; i<=X; i++){
+        if(canPay[i]){
 
-/**  */
-var log = console.log;
-var splitN = (N) => N.split().split(' ').map(Number);
-function MainB(input){
-	
+        } else {
+
+        }
+    }
 }
-// MainB(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+// MainC(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+
+MainC('2 19\n2 3\n5 6');
+

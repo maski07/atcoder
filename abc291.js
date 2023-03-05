@@ -100,7 +100,7 @@ function MainD1(input) {
 // MainD1(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 
 var log = console.log;
-function MainD(input) {
+function MainD2(input) {
     const arr = input.split('\n');
     const [N, ...ABn] = arr.map(x => x.split(' '));
     const numN = Number(N);
@@ -132,11 +132,31 @@ function MainD(input) {
         memo[1][0] = B;
         memo[1][1] = plus2;
     }
-    log(String(memo[0][1] + memo[1][1] % mod).split('n').join());
+    log(String((memo[0][1] + memo[1][1]) % mod).split('n').join());
+}
+// MainD(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+
+var log = console.log;
+function MainD(input) {
+    const arr = input.split('\n');
+    const [strN, ...ABn] = arr.map(x => x.split(' '));
+    const N = Number(strN);
+    const dp = Array.from({length: N}, () => new Array(2).fill(0));
+    dp[0][0] = dp[0][1] = 1;
+    log(dp);
+    const mod = 998244353;
+    for(let i=1; i<N; i++){
+        log(i,dp);
+        if(ABn[i][0] !== ABn[i-1][0]) dp[i][0] += dp[i-1][0] % mod;
+        if(ABn[i][0] !== ABn[i-1][1]) dp[i][0] += dp[i-1][1] % mod;
+        if(ABn[i][1] !== ABn[i-1][0]) dp[i][1] += dp[i-1][0] % mod;
+        if(ABn[i][1] !== ABn[i-1][1]) dp[i][1] += dp[i-1][1] % mod;
+    }
+    log((dp[N-1][0] + dp[N-1][1]) % mod);
 }
 // MainD(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 
 MainD('3\n1 2\n4 2\n3 4');
-MainD('4\n1 5\n2 6\n3 7\n4 8');
-MainD('8\n877914575 602436426\n861648772 623690081\n476190629 262703497\n971407775 628894325\n822804784 450968417\n161735902 822804784\n161735902 822804784\n822804784 161735902');
+// MainD('4\n1 5\n2 6\n3 7\n4 8');
+// MainD('8\n877914575 602436426\n861648772 623690081\n476190629 262703497\n971407775 628894325\n822804784 450968417\n161735902 822804784\n161735902 822804784\n822804784 161735902');
 
