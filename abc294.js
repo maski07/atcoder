@@ -107,39 +107,49 @@ function MainD(input){
     log(ans.join('\n'));
 }
 // MainD(require("fs").readFileSync("/dev/stdin", "utf8").trim());
-MainD('4 10\n1\n1\n3\n2 1\n1\n2 3\n3\n1\n2 2\n3');
+// MainD('4 10\n1\n1\n3\n2 1\n1\n2 3\n3\n1\n2 2\n3');
 
 /**  */
 var log = console.log;
 function MainE(input){
     const arr = input.split('\n');
-    const [L, N1, N2] = arr.shift().map(Number);
+    const [L, N1, N2] = arr.shift().split(' ').map(Number);
     const vl = arr.map(a => a.split(' ').map(Number));
     const N1arr = [];
     const N2arr = [];
-    let num = 0;
     for(let i = 0; i < N1; i++){
-        const v = vl[i][0];
-        const l = vl[i][1];
-        num += l;
-        N1arr.push([v, num]);
+        N1arr.push([vl[i][0], vl[i][1]]);
     }
-    num = 0;
-    for(let i = N1; i < N2; i++){
-        const v = vl[i][0];
-        const l = vl[i][1];
-        num += l;
-        N2arr.push([v, num]);
+    for(let i = 0; i < N2; i++){
+        N2arr.push([vl[i+N1][0], vl[i+N1][1]]);
     }
-    let i=0, j=0;
-    let n1num = N1arr[0][0], n2num = N2arr[0][0];
-    let ans = 0;
-    while(true) {
-        if(n1num === n2num) {
-
-        } else {
-
+    // solve 
+    // p,qはprevious place
+    let i=0, j=0, p=0, q=0, ans = 0;
+    while(i < N1 && j < N2) {
+        // log({i,j,p,q}, N1arr[i][1] , N2arr[j][1],{ans});
+        // 数値の比較
+        if(N1arr[i][0] === N2arr[j][0]) {
+            // 同じなら共通部分をたす。
+            ans += Math.min(p+N1arr[i][1],
+                 q+N2arr[j][1]) - Math.max(p,q);
+        }
+        // 現在地を確認し、先に進んでいない方を次へ進める
+        if(N1arr[i][1] + p < N2arr[j][1] + q){
+            p += N1arr[i][1];
+            i++;
+        } else if(N1arr[i][1]+p === N2arr[j][1]+q){
+            p += N1arr[i][1];
+            q += N2arr[j][1];
+            i++, j++;
+        } else{
+            q += N2arr[j][1];
+            j++;
         }
     }
+    log(ans);
 }
 // MainE(require("fs").readFileSync("/dev/stdin", "utf8").trim());
+MainE('8 4 3\n1 2\n3 2\n2 3\n3 1\n1 4\n2 1\n3 3');
+MainE('10000000000 1 1\n1 10000000000\n1 10000000000');
+MainE('1000 4 7\n19 79\n33 463\n19 178\n33 280\n19 255\n33 92\n34 25\n19 96\n12 11\n19 490\n33 31');
