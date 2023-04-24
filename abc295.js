@@ -10,6 +10,13 @@ function MainA(input){
 // MainA(require("fs").readFileSync("/dev/stdin", "utf8").trim());
 // MainA('10\nin that case you should print yes and not no');
 // MainA('10\nin diesem fall sollten sie no und nicht yes ausgeben');
+console.log(
+    require("fs").readFileSync("/dev/stdin", "utf8")
+    .split('\n')[1].split(' ')
+    .some(x => ['and', 'not', 'that', 'the', 'you']
+    .includes(x))
+    ? 'Yes'
+    : 'No');
 
 /**  */
 var log = console.log;
@@ -98,7 +105,7 @@ function MainD(input){
         const num = numbers[0];
         counts[num]++;
         if(i % 2 === 0) {
-            
+
         }
     }
 }
