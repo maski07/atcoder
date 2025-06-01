@@ -15,17 +15,15 @@ class Main {
 
     public static void main(String[] args) {
         try (var scanner = new Scanner(System.in)) {
-            var X = scanner.nextInt();
-            var Y = scanner.nextInt();
-            double count = 0.0;
-            for (int i = 1; i <= 6; i++) {
-                for (int j = 1; j <= 6; j++) {
-                    if (i + j >= X || Math.abs(i - j) >= Y) {
-                        count++;
-                    }
-                }
+            var A = scanner.nextInt();
+            var B = scanner.nextInt();
+            var C = scanner.nextInt();
+            var D = scanner.nextInt();
+            if (C < A || A == C && D <= B) {
+                log("Yes");
+            } else {
+                log("No");
             }
-            log(count / 36);
         }
     }
 
