@@ -1,3 +1,4 @@
+
 /** 既存メソッドで使用 */
 import java.util.Scanner;
 import java.util.Arrays;
@@ -12,10 +13,24 @@ import java.util.HashMap;
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
+        try (var scanner = new Scanner(System.in)) {
             var N = scanner.nextInt();
-            log("Yes");
-            log("No");    
+            Set<String> unique = new HashSet<>();
+            String[] S = new String[N];
+            for (int i = 0; i < N; i++) {
+                S[i] = scanner.next();
+            }
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    if (i == j)
+                        continue;
+                    String str = S[i] + S[j];
+                    if (!unique.contains(str)) {
+                        unique.add(str);
+                    }
+                }
+            }
+            log(unique.size());
         }
     }
 
@@ -31,4 +46,3 @@ class Main {
         System.out.println(Arrays.deepToString(obj));
     }
 }
-

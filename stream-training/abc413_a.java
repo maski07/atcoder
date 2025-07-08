@@ -1,3 +1,4 @@
+
 /** 既存メソッドで使用 */
 import java.util.Scanner;
 import java.util.Arrays;
@@ -12,10 +13,14 @@ import java.util.HashMap;
 class Main {
 
     public static void main(String[] args) {
-        try(var scanner = new Scanner(System.in)){
+        try (var scanner = new Scanner(System.in)) {
             var N = scanner.nextInt();
-            log("Yes");
-            log("No");    
+            var M = scanner.nextInt();
+            var A = new int[N];
+            for (int i = 0; i < N; i++) {
+                A[i] = scanner.nextInt();
+            }
+            log(Arrays.stream(A).sum() <= M ? "Yes" : "No");
         }
     }
 
@@ -31,4 +36,3 @@ class Main {
         System.out.println(Arrays.deepToString(obj));
     }
 }
-
